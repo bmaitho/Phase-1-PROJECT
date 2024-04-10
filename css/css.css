@@ -1,19 +1,33 @@
 
 
 body {
-    background-color: bisque;
+    background-color:black;
 }
 
 #top-bar {
-    background-color: rgb(16, 13, 49);
+    background-color:rgb(5, 1, 1);
     color: white;
     font-size:x-large;
     font-weight :bolder;
     padding: 100px ;
 text-align: center;
-
 }
+#top-bar span{
+    padding: 10px;
+    font-size: 100px;
+    font-weight :bolder;
+    color: rgb(236, 125, 125);
+    }
 
+#top-bar span:hover{
+
+    }
+#title h1{
+    font-size: xx-large;
+    font-weight: bolder;
+    text-align: center;
+    color:rgb(182, 162, 162) ;
+}
 #search-section  {
     text-align: right;
     padding: 10px ;
@@ -21,9 +35,10 @@ text-align: center;
 #search-section input {
     padding: 12px 12px ;
     margin: 8px;
-    border: 1px solid rgb(114, 69, 14);
+    border: 1px solid rgb(187, 164, 136);
     border-radius: 10px;
-    background-color: rgb(218, 219, 226);
+    background-color: rgb(187, 164, 136);
+    text-align: center;
 }
 #search-section button {
     background-color:rgb(187, 164, 136);
@@ -32,24 +47,28 @@ margin: 0px 20px;
 border-radius: 20px;
 }
 #search-section button:hover {
-    background-color: rgb(16, 13, 49);
+    background-color: rgb(192, 100, 100);
     color: white;
+    transform: scale(1.1);
 }
 #search-section :hover{
-    background-color: rgb(16, 13, 49);
+    background-color:rgb(192, 100, 100);
     color: white;
+    transform: scale(1.1);
 }
 
 #images {
     display: flex;
     flex-wrap:  wrap;
 }
+
+
 #images img{
     width: 250px;
     height: 250px;
     border-radius: 2000px;
-    padding:10px;
-   margin: 10px 00px;
+    padding:40px;
+   
  
 }
     
@@ -58,7 +77,7 @@ border-radius: 20px;
   
 }
 #images h2{
-    color: brown;
+    color: rgb(219, 104, 104);
     font-style: italic;
     padding-left: 30px;
     font-weight: bolder;
@@ -70,5 +89,8 @@ border-radius: 20px;
     padding:10px;
 margin: 0px 20px;
 border-radius: 20px;
-
+}
+#images button:hover{
+    background-color: rgb(192, 100, 100);
+    transform: scale(1.1);
 }
