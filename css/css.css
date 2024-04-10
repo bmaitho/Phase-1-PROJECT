@@ -6,3 +6,29 @@
     padding: 100px ;
 text-align: center;
 }
+
+#search-section  {
+    text-align: right;
+    padding: 10px ;
+}
+#search-section input {
+    padding: 12px 12px ;
+    margin: 8px;
+    border: 1px solid rgb(114, 69, 14);
+    border-radius: 10px;
+    background-color: rgb(218, 219, 226);
+}
+#search-section button {
+    background-color:rgb(187, 164, 136);
+    padding:10px;
+margin: 0px 20px;
+border-radius: 20px;
+}
+#search-section button:hover {
+    background-color: rgb(93, 83, 204);
+    color: white;
+}
+#search-section :hover{
+    background-color: rgb(93, 83, 204);
+    color: white;
+}
