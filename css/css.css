@@ -1,6 +1,8 @@
 
 
-
+body {
+    background-color: bisque;
+}
 
 #top-bar {
     background-color: rgb(16, 13, 49);
@@ -9,6 +11,7 @@
     font-weight :bolder;
     padding: 100px ;
 text-align: center;
+
 }
 
 #search-section  {
@@ -37,13 +40,16 @@ border-radius: 20px;
     color: white;
 }
 
-
+#images {
+    display: flex;
+    flex-wrap:  wrap;
+}
 #images img{
     width: 250px;
     height: 250px;
-    border-radius: 100px;
-    padding:20;
-    flex-direction: row;
+    border-radius: 2000px;
+    padding:10px;
+   margin: 10px 00px;
  
 }
     
@@ -56,7 +62,13 @@ border-radius: 20px;
     font-style: italic;
     padding-left: 30px;
     font-weight: bolder;
+    margin: 10px;
+    text-align: center;
 }
-{
+#images .more-button button{
+    background-color:rgb(187, 164, 136);
+    padding:10px;
+margin: 0px 20px;
+border-radius: 20px;
 
 }
