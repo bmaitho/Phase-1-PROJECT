@@ -1,3 +1,7 @@
+
+
+
+
 #top-bar {
     background-color: rgb(16, 13, 49);
     color: white;
@@ -25,10 +29,34 @@ margin: 0px 20px;
 border-radius: 20px;
 }
 #search-section button:hover {
-    background-color: rgb(93, 83, 204);
+    background-color: rgb(16, 13, 49);
     color: white;
 }
 #search-section :hover{
-    background-color: rgb(93, 83, 204);
+    background-color: rgb(16, 13, 49);
     color: white;
+}
+
+
+#images img{
+    width: 250px;
+    height: 250px;
+    border-radius: 100px;
+    padding:20;
+    flex-direction: row;
+ 
+}
+    
+#images img:hover{
+    transform: scale(1.1);
+  
+}
+#images h2{
+    color: brown;
+    font-style: italic;
+    padding-left: 30px;
+    font-weight: bolder;
+}
+{
+
 }
