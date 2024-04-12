@@ -10,7 +10,7 @@ body {
     font-size:x-large;
     font-weight :bolder;
     padding: 100px ;
-text-align: center;
+    text-align: center;
 }
 #top-bar span{
     padding: 10px;
@@ -19,9 +19,6 @@ text-align: center;
     color: rgb(236, 125, 125);
     }
 
-#top-bar span:hover{
-
-    }
 #title h1{
     font-size: xx-large;
     font-weight: bolder;
@@ -32,19 +29,12 @@ text-align: center;
     text-align: right;
     padding: 10px ;
 }
-#search-section input {
-    padding: 12px 12px ;
-    margin: 8px;
-    border: 1px solid rgb(187, 164, 136);
-    border-radius: 10px;
-    background-color: rgb(187, 164, 136);
-    text-align: center;
-}
+
 #search-section button {
     background-color:rgb(187, 164, 136);
     padding:10px;
-margin: 0px 20px;
-border-radius: 20px;
+    margin: 0px 20px;
+    border-radius: 20px;
 }
 #search-section button:hover {
     background-color: rgb(192, 100, 100);
@@ -57,24 +47,32 @@ border-radius: 20px;
     transform: scale(1.1);
 }
 
+#searchInput {
+background-color: rgb(187, 164, 136);
+border-radius: 10px;
+
+    padding: 12px 12px ;
+    margin: 8px;
+    border: 1px solid rgb(187, 164, 136);
+    border-radius: 100px;
+    background-color: rgb(187, 164, 136);
+    text-align: center;
+}
 #images {
     display: flex;
     flex-wrap:  wrap;
 }
-
-
 #images img{
     width: 250px;
     height: 250px;
     border-radius: 2000px;
     padding:40px;
-   
- 
 }
     
 #images img:hover{
     transform: scale(1.1);
-  
+
+    
 }
 #images h2{
     color: rgb(219, 104, 104);
@@ -87,10 +85,37 @@ border-radius: 20px;
 #images .more-button button{
     background-color:rgb(187, 164, 136);
     padding:10px;
-margin: 0px 20px;
-border-radius: 20px;
+    margin: 0px 20px;
+    border-radius: 20px;
 }
 #images button:hover{
     background-color: rgb(192, 100, 100);
     transform: scale(1.1);
+}
+#result {
+    background-color: rgb(187, 164, 136); 
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0px;
+    border-radius: 10px;
+    font-size: 16px; 
+}
+#embed{
+    padding: 40px;
+    background-color:black;
+    text-align: center;
+    color: pink;
+    font-size: larger;  
+    animation: fadeIn 5s;
+    animation: fadeOut 20s;
+
+    
+}
+@keyframes fadeIn{
+    from {opacity: 0;}
+    to {opacity: 7;}
+}
+@keyframes fadeOut{
+    from {opacity: 7;}
+    to {opacity: 0;}
 }
