@@ -290,6 +290,6 @@ function onSearchButtonClick(){
 	getCountry()
 }
 
-searchButton.addEventListener('click', onSearchButtonClick)
+searchButton.addEventListener('click',onSearchButtonClick)
 
 

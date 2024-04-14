@@ -106,11 +106,9 @@ border-radius: 10px;
     text-align: center;
     color: pink;
     font-size: larger;  
-    animation: fadeIn 5s;
-    animation: fadeOut 20s;
-
-    
+    animation: fadeIn 20s, fadeOut 15s infinite;
 }
+
 @keyframes fadeIn{
     from {opacity: 0;}
     to {opacity: 7;}
