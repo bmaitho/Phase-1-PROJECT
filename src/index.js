@@ -5,6 +5,8 @@ const moreButton = document.getElementById('moreButton');
 const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
 const embed = document.getElementById('embed');
+const form = document.getElementById("ratingForm");
+const message = document.getElementById("message");
 
 const countriesByName = {
   "Afghanistan": "AF",
@@ -303,3 +305,10 @@ buttons.forEach(button => {
   });
 });
 
+form.addEventListener("submit", function(event) {
+  event.preventDefault(); 
+  const rating = document.getElementById("rating").value;
+  console.log("Rating:", rating);
+  const comment = document.getElementById("comment").value;
+  form.reset(); 
+});

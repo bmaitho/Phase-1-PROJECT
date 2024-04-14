@@ -2,8 +2,6 @@
 
 body {
     background-color:black;
-
-
 }
 
 #top-bar {
@@ -19,8 +17,13 @@ body {
     font-size: 100px;
     font-weight :bolder;
     color: rgb(236, 125, 125);
+    display: inline-block;
+    overflow: hidden;
+    border-right: 0.15em solid rgb(0, 0, 0); 
+    white-space: nowrap; 
+    animation: typing 6.0s steps(40, end) forwards;
     }
-
+    
 #title h1{
     font-size: xx-large;
     font-weight: bolder;
@@ -35,24 +38,22 @@ body {
 #search-section button {
     background-color:rgb(187, 164, 136);
     padding:10px;
-    margin: 0px 20px;
     border-radius: 20px;
 }
+
 #search-section button:hover {
-    background-color: rgb(192, 100, 100);
     color: white;
     transform: scale(1.1);
 }
+
 #search-section :hover{
-    background-color:rgb(192, 100, 100);
     color: white;
     transform: scale(1.1);
 }
 
 #searchInput {
-background-color: rgb(187, 164, 136);
-border-radius: 10px;
-
+    background-color: rgb(187, 164, 136);
+    border-radius: 10px;
     padding: 12px 12px ;
     margin: 8px;
     border: 1px solid rgb(187, 164, 136);
@@ -60,28 +61,31 @@ border-radius: 10px;
     background-color: rgb(187, 164, 136);
     text-align: center;
 }
+
 #images {
     display: flex;
-    flex-wrap:  wrap;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
+
 #images img{
     width: 250px;
     height: 250px;
     border-radius: 2000px;
-    padding:40px;
+    padding:10px;
 }
     
 #images img:hover{
     transform: scale(1.1);  
 }
-
   
 #images h2{
     color: rgb(219, 104, 104);
     font-style: italic;
     padding-left: 30px;
     font-weight: bolder;
-    margin: 10px;
+    margin: 40px;
     text-align: center;
 }
 #images .moreButton button{
@@ -91,26 +95,37 @@ border-radius: 10px;
     border-radius: 20px;
 }
 #images button:hover{
-    background-color: rgb(192, 100, 100);
     transform: scale(1.1);
 }
 
 .description {
     display: none;
     color:palevioletred;
-    float: inline-end;
-    width: 500px;
-    height: 80px;
+    float: left;
+    width: 250px;
+    height: 100px;
     margin: 20px;
+    font-size: 20px;
   }
-  
-#result {
-    background-color: rgb(187, 164, 136); 
-    color: white;
-    padding: 10px 20px;
-    margin: 10px 0px;
-    border-radius: 10px;
-    font-size: 16px; 
+
+#ratingForm {
+    padding: 200px;
+    color:rgb(187, 164, 136);
+    text-align: right;
+    font-size: 30px;
+    flex-wrap: wrap;  
+    justify-content: center;
+}
+
+#ratingForm button {
+background-color:rgb(187, 164, 136);
+border-radius: 30px; 
+}
+
+#rating{
+    background-color:rgb(187, 164, 136);
+    border-radius: 30px; 
+    text-align: center; 
 }
 #embed{
     padding: 40px;
@@ -128,4 +143,8 @@ border-radius: 10px;
 @keyframes fadeOut{
     from {opacity: 7;}
     to {opacity: 0;}
+}
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
 }
