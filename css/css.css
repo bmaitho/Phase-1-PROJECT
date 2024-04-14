@@ -2,6 +2,8 @@
 
 body {
     background-color:black;
+
+
 }
 
 #top-bar {
@@ -70,10 +72,10 @@ border-radius: 10px;
 }
     
 #images img:hover{
-    transform: scale(1.1);
-
-    
+    transform: scale(1.1);  
 }
+
+  
 #images h2{
     color: rgb(219, 104, 104);
     font-style: italic;
@@ -82,7 +84,7 @@ border-radius: 10px;
     margin: 10px;
     text-align: center;
 }
-#images .more-button button{
+#images .moreButton button{
     background-color:rgb(187, 164, 136);
     padding:10px;
     margin: 0px 20px;
@@ -92,6 +94,16 @@ border-radius: 10px;
     background-color: rgb(192, 100, 100);
     transform: scale(1.1);
 }
+
+.description {
+    display: none;
+    color:palevioletred;
+    float: inline-end;
+    width: 500px;
+    height: 80px;
+    margin: 20px;
+  }
+  
 #result {
     background-color: rgb(187, 164, 136); 
     color: white;

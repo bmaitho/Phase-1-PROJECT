@@ -1,5 +1,7 @@
-
+document.addEventListener('DOMContentLoaded', function(event) {
+});
 const url = "https://www.travel-advisory.info/api?countrycode=";
+const moreButton = document.getElementById('moreButton');
 const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
 const embed = document.getElementById('embed');
@@ -292,4 +294,12 @@ function onSearchButtonClick(){
 
 searchButton.addEventListener('click',onSearchButtonClick)
 
+
+const buttons = document.querySelectorAll('.moreButton button');
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    const description = button.parentElement.nextElementSibling;
+    description.style.display = description.style.display === 'none' ? 'block' : 'none';
+  });
+});
 
