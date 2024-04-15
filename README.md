@@ -7,7 +7,7 @@ This is a travel advisory website that displays travel advisories for different 
 Clone this repository.
 Open the index.html file in your web browser.
 ## Project Setup
-The project uses HTML, CSS, and JavaScript. The HTML file (index.html) structures the content of the webpage. The CSS file (not included here) styles the visual elements of the website. The JavaScript file (src/index.js) handles the interactivity and functionality of the website.
+The project uses HTML, CSS, and JavaScript. The HTML file (index.html) structures the content of the webpage. The CSS file  styles the visual elements of the website. The JavaScript file (src/index.js) handles the interactivity and functionality of the website.
 
 ## Description
 The website consists of the following sections:
