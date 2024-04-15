@@ -1,5 +1,4 @@
 
-
 body {
     background-color:black;
 }
@@ -12,6 +11,7 @@ body {
     padding: 100px ;
     text-align: center;
 }
+
 #top-bar span{
     padding: 10px;
     font-size: 100px;
@@ -21,7 +21,7 @@ body {
     overflow: hidden;
     border-right: 0.15em solid rgb(0, 0, 0); 
     white-space: nowrap; 
-    animation: typing 6.0s steps(40, end) forwards;
+    animation: typing 7.0s steps(40, end) forwards;
     }
     
 #title h1{
@@ -30,10 +30,16 @@ body {
     text-align: center;
     color:rgb(182, 162, 162) ;
 }
+#title p{
+    font-size:10px;
+    text-align: center;
+}
+
 #search-section  {
     text-align: right;
     padding: 10px ;
 }
+
 
 #search-section button {
     background-color:rgb(187, 164, 136);
@@ -61,7 +67,14 @@ body {
     background-color: rgb(187, 164, 136);
     text-align: center;
 }
-
+result {
+    background-color: rgb(187, 164, 136); 
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0px;
+    border-radius: 10px;
+    font-size: 16px; 
+}
 #images {
     display: flex;
     flex-wrap: wrap;
@@ -73,7 +86,7 @@ body {
     width: 250px;
     height: 250px;
     border-radius: 2000px;
-    padding:10px;
+    padding:50px;
 }
     
 #images img:hover{
@@ -118,8 +131,8 @@ body {
 }
 
 #ratingForm button {
-background-color:rgb(187, 164, 136);
-border-radius: 30px; 
+    background-color:rgb(187, 164, 136);
+    border-radius: 30px; 
 }
 
 #rating{

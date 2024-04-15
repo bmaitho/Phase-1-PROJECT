@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', function(event) {
-});
+
 const url = "https://www.travel-advisory.info/api?countrycode=";
 const moreButton = document.getElementById('moreButton');
 const searchInput = document.getElementById('searchInput');
@@ -7,7 +6,9 @@ const searchButton = document.getElementById('searchButton');
 const embed = document.getElementById('embed');
 const form = document.getElementById("ratingForm");
 const message = document.getElementById("message");
-
+document.addEventListener('beforeunload', function(event) {
+  // Your code here, like showing a confirmation message
+});
 const countriesByName = {
   "Afghanistan": "AF",
   "Åland Islands": "AX",
@@ -271,7 +272,7 @@ async function getCountry() {
             const countryCode = countriesByName[countryKeys[lowerCaseCountryKeys.indexOf(searchValue)]];
             console.log(countryCode)
            
-             const response = await fetch("https://www.travel-advisory.info/api?countrycode=" + countryCode);
+            const response = await fetch(`https://www.travel-advisory.info/api?countrycode=`+ countryCode);
             const data = await response.json();
             const parsedData = data.data
             const countryInfo = parsedData[countryCode]
@@ -296,7 +297,6 @@ function onSearchButtonClick(){
 
 searchButton.addEventListener('click',onSearchButtonClick)
 
-
 const buttons = document.querySelectorAll('.moreButton button');
 buttons.forEach(button => {
   button.addEventListener('click', () => {
@@ -309,6 +309,6 @@ form.addEventListener("submit", function(event) {
   event.preventDefault(); 
   const rating = document.getElementById("rating").value;
   console.log("Rating:", rating);
-  const comment = document.getElementById("comment").value;
+ alert(`Rating: ${rating}: Thanks for the feedback`);
   form.reset(); 
 });
