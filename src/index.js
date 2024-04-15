@@ -1,4 +1,4 @@
-
+// Assigning vallues to various constants I will need throughout the code 
 const url = "https://www.travel-advisory.info/api?countrycode=";
 const moreButton = document.getElementById('moreButton');
 const searchInput = document.getElementById('searchInput');
@@ -7,8 +7,11 @@ const embed = document.getElementById('embed');
 const form = document.getElementById("ratingForm");
 const message = document.getElementById("message");
 document.addEventListener('beforeunload', function(event) {
-  // Your code here, like showing a confirmation message
+
 });
+// The api assigened to the url constant does not allow the user to search for a country using the country name only ISO codes . 
+// This const "countriesByName" is like my own Api , it contains all the countries and their ISO codes 
+// basically , here the country name are used as keys and the iso codes as values 
 const countriesByName = {
   "Afghanistan": "AF",
   "Åland Islands": "AX",
@@ -262,53 +265,78 @@ const countriesByName = {
 };
 
 
-
+//The "getCountry" function is used asynchronously to retrieve travel advisory information for a specified country
+// I have also used it to cater for user errors such as not following correct casing by converting all the user inputs to lower case first 
 async function getCountry() {
+   // This line gets the value of the input element with the ID "searchInput" and converts it to lowercase letters.
     const searchValue = searchInput.value.toLowerCase();
+    // This checks if the `searchValue` is truthy 
+    // which means that the user has inputed a country name
     if (!!searchValue) {
+             // This line basically assignes the value of the const "countryKeys" to be the keys of the object literal "countriesByName" which are country names 
         const countryKeys = Object.keys(countriesByName);
+             // This line converts all the country keys/country names to lower case letters, so that they match with the users search input which I also earlier converted to lower case
         const lowerCaseCountryKeys = countryKeys.map(key => key.toLowerCase());
+             // This line just checks if the `lowerCaseCountryKeys` array includes the `searchValue` which is the user's search input.
         if (lowerCaseCountryKeys.includes(searchValue)) {
+             // As earlier mentioned this api does not allow a user to searc for a country by its name only by iso country codes
+             // This line assignes the value of "countyCode" to be the country code from the "countriesByName" object using the matching country name from the `lowerCaseCountryKeys` array
             const countryCode = countriesByName[countryKeys[lowerCaseCountryKeys.indexOf(searchValue)]];
             console.log(countryCode)
-           
-            const response = await fetch(`https://www.travel-advisory.info/api?countrycode=`+ countryCode);
+             // This line fetches data from the API and manipulates the API to filter the search results to only bring up the "countryCode" which is going to be the users search input 
+             // so basically what has happened is on the frontend the user has inputed a country name but here ,cause of API limitation on the backend we have converted the users country name to be that countries corresponding iso code and added it to the api  
+          const response = await fetch(`https://www.travel-advisory.info/api?countrycode=`+ countryCode);
+             // This line parses the JSON data from the API and stores it in a variable called "data"
             const data = await response.json();
+           
             const parsedData = data.data
+             // This line gets the nested data for the specific country from the parsed response
             const countryInfo = parsedData[countryCode]
-            
+             // This line logs the travel advisory message to the console
             console.log(countryInfo.advisory.message)
 
-            
+            // This line sets the text content of the element with the ID "embed" to the travel advisory message
+            // makes it easy to style 
             embed.textContent =countryInfo.advisory.message
+             // This line displays an alert if the country is not found or the user eters an invalid input 
         } else {
             alert("Country not found")
         }
     }
 }
-
+//event handler function that is triggered when a user interacts with the search input element.
 function search (e){
   console.log(searchInput.value);
 }
-
+// This function is called when the search button is clicked
 function onSearchButtonClick(){
 	getCountry()
 }
-
+// This line adds an event listener to the search button
 searchButton.addEventListener('click',onSearchButtonClick)
-
+// This line selects all the "moreButton" buttons and assigns them to one "button" to make it easier to work with
 const buttons = document.querySelectorAll('.moreButton button');
+// This line iterates over each button using a forEach loop
 buttons.forEach(button => {
+ // This line adds an event listener to each button for the click event
   button.addEventListener('click', () => {
+ // This line gets the description element that is a sibling of the clicked button
     const description = button.parentElement.nextElementSibling;
+ // This line toggles the display style of the description element between 'block' and 'none' 
+ // So that when the user clicks on the learn more button the description appears but when they click again it dissapears 
     description.style.display = description.style.display === 'none' ? 'block' : 'none';
   });
 });
-
+// This line adds an event listener to the form for the submit event
 form.addEventListener("submit", function(event) {
+  // This line prevents the default form submission behavior 
   event.preventDefault(); 
+// This line gets the value of the element with the ID "rating"
   const rating = document.getElementById("rating").value;
+  // This line logs the rating value to the console for debugging
   console.log("Rating:", rating);
+  // This line displays an alert message with the submitted rating and a thank you message
  alert(`Rating: ${rating}: Thanks for the feedback`);
+  // This line resets the form to its initial state after the user submits the form 
   form.reset(); 
 });
